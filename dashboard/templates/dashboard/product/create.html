@@ -1,0 +1,14 @@
+{% extends "dashboard/__base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Product List
+{% endblock title %}
+
+{% block content %}
+    <form action="/dashboard/product/create" method="post">
+    {% csrf_token %}
+    {% crispy form %}
+        <input type="submit" value="حفظ">
+    </form>
+{% endblock content %}

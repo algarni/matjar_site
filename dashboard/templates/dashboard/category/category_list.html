@@ -1,0 +1,14 @@
+{% extends "dashboard/__base.html" %}
+{% block title %}
+    Category List
+{% endblock title %}
+
+{% block content %}
+    <a class="btn btn-default" href="{% url 'dashboard:category_create' %}" role="button">صنف جديد</a>
+    <h2>قائمة الأصناف</h2>
+    <ul>
+        {% for category in category_list %}
+            <li>{{ category.name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
